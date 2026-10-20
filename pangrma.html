@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclos Invisibles | Pangrama</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="./index.html">
+            <img src="./IMG/titulo.png"
+                 alt="Ciclos Invisibles"
+                 class="logo">
+        </a>
+
+        <nav>
+            <a href="./pangrama.html">Pangrama</a>
+            <a href="./index.html">Inicio</a>
+        </nav>
+
+        <button id="toggle-theme-btn" type="button">
+            Dark / Light
+        </button>
+    </header>
+
+    <main>
+        <section class="hero">
+
+            <!-- GRÁFICAS QUE CAMBIAN SEGÚN EL MODO -->
+            <div class="hero-graficas" aria-hidden="true">
+
+                <img
+                    src="./IMG/graficaclaro.png"
+                    alt=""
+                    class="grafica grafica-claro"
+                >
+
+                <img
+                    src="./IMG/graficaoscuro.png"
+                    alt=""
+                    class="grafica grafica-oscuro"
+                >
+
+            </div>
+
+            <!-- TEXTO ORIGINAL -->
+            <p class="hero-descriptor">
+                UN CUERPO QUE COMUNICA
+            </p>
+
+            
+<h1 class="hero-pangrama">
+    Mi cuerpo no<br>
+    es un enigma:<br>
+    entre kilómetros<br>
+    de rutina, sueño,<br>
+    estrés, flujo y<br>
+    hormonas, cada<br>
+    señal dibuja<br>
+    vínculos que<br>
+    exploro sin<br>
+    vergüenza, incluso<br>
+    en la web.
+</h1>
+
+            <h2 class="hero-pregunta">
+                ¿Qué señales reconoce tu cuerpo?
+            </h2>
+
+            <p class="hero-descripcion">
+                Explora las señales del cuerpo femenino
+                como una forma de inteligencia no consciente.
+            </p>
+
+            <p class="hero-footer">
+                OBSERVA · CONECTA · COMPRENDE
+            </p>
+
+        </section>
+    </main>
+
+    <!-- CAMBIO DE MODO CLARO / OSCURO -->
+    <script>
+        const botonTema = document.getElementById("toggle-theme-btn");
+
+        botonTema.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+        });
+    </script>
+
+</body>
+</html>

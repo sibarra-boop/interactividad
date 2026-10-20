@@ -1,0 +1,401 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap');
+
+
+
+:root {
+
+   
+
+    --green: #253F35;
+    --cream: #F8F6F0;
+    --yellow: #E9EA75;
+    --coral: #EFA18A;
+    --lavender: #B6A9D9;
+    --sage: #B9D1BC;
+
+
+
+    --bg: #F8F6F0;
+    --text: #253F35;
+    --accent: #D7BA7C;
+
+
+
+    --cloud-coral: rgba(239, 161, 138, 0.38);
+    --cloud-yellow: rgba(233, 234, 117, 0.38);
+    --cloud-lavender: rgba(182, 169, 217, 0.38);
+    --cloud-sage: rgba(185, 209, 188, 0.38);
+
+   
+
+    --line: #253F35;
+    --node: #F8F6F0;
+}
+
+
+
+body.dark-mode {
+
+    --bg: #112B24;
+    --text: #F6F0DF;
+    --accent: #E5D792;
+
+    /* TRANSPARENCIAS */
+
+    --cloud-coral: rgba(239, 161, 138, 0.28);
+    --cloud-yellow: rgba(233, 234, 117, 0.25);
+    --cloud-lavender: rgba(182, 169, 217, 0.32);
+    --cloud-sage: rgba(185, 209, 188, 0.25);
+
+    /* ELEMENTOS GRÁFICOS */
+
+    --line: #F6F0DF;
+    --node: #112B24;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+
+    font-family: 'DM Sans', sans-serif;
+
+    overflow-x: hidden;
+
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease;
+}
+
+
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 30px 22px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    background: transparent;
+
+    z-index: 10;
+}
+
+
+/* ==================================
+   LOGOTIPO
+================================== */
+
+header a {
+    display: block;
+    flex-shrink: 0;
+}
+
+header .logo {
+    display: block;
+
+    width: 305px;
+    max-width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+/* LOGO EN MODO OSCURO */
+
+body.dark-mode .logo {
+    filter: brightness(0) invert(1);
+}
+
+
+/* ==================================
+   NAVEGACIÓN
+================================== */
+
+header nav {
+    display: none;
+}
+
+
+/* ==================================
+   BOTÓN CLARO / OSCURO
+================================== */
+
+#toggle-theme-btn {
+
+    position: relative;
+
+    padding: 10px 13px;
+
+    background: transparent;
+    color: var(--text);
+
+    border: 1px solid var(--line);
+    border-radius: 30px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        color 0.4s ease,
+        border-color 0.4s ease,
+        background-color 0.4s ease;
+}
+
+#toggle-theme-btn:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+
+/* ==================================
+   HERO — CONTENEDOR PRINCIPAL
+================================== */
+
+.hero {
+
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    min-height: 100svh;
+
+    padding: 250px 22px 55px;
+
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+
+/* ==================================
+   GRÁFICAS DE FONDO
+================================== */
+
+.hero-graficas {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.grafica {
+
+    position: absolute;
+    inset: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+
+    transition: opacity 0.4s ease;
+}
+
+
+/* GRÁFICA EN MODO CLARO */
+
+.grafica-claro {
+    opacity: 1;
+}
+
+.grafica-oscuro {
+    opacity: 0;
+}
+
+
+/* GRÁFICA EN MODO OSCURO */
+
+body.dark-mode .grafica-claro {
+    opacity: 0;
+}
+
+body.dark-mode .grafica-oscuro {
+    opacity: 1;
+}
+
+
+/* ==================================
+   TEXTOS DEL HERO
+================================== */
+
+/* DESCRIPTOR */
+
+.hero-descriptor {
+
+    position: relative;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 3px;
+    line-height: 1.5;
+
+    margin-bottom: 45px;
+}
+
+
+/* PANGRAMA PRINCIPAL */
+
+.hero-pangrama {
+
+    position: relative;
+
+    font-family: 'Italiana', Georgia, serif;
+
+    font-size: clamp(36px, 10vw, 52px);
+    font-weight: 400;
+
+    line-height: 1.07;
+    letter-spacing: -0.8px;
+
+    max-width: 520px;
+
+    margin-bottom: 25px;
+}
+
+
+/* PREGUNTA */
+
+.hero-pregunta {
+
+    position: relative;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    line-height: 1.4;
+
+    margin-bottom: 55px;
+}
+
+
+/* DESCRIPCIÓN */
+
+.hero-descripcion {
+
+    position: relative;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    max-width: 330px;
+
+    margin-bottom: 50px;
+}
+
+
+/* TEXTO INFERIOR */
+
+.hero-footer {
+
+    position: relative;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+
+
+/* ==================================
+   COLORES DE LOS TEXTOS
+================================== */
+
+.hero h1,
+.hero h2,
+.hero p {
+    color: var(--text);
+}
+
+
+/* ==================================
+   AJUSTES PARA MOBILE
+================================== */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 24px 22px;
+    }
+
+    header .logo {
+        width: 205px;
+    }
+
+    .hero {
+        padding: 250px 22px 55px;
+        min-height: 100svh;
+    }
+
+    .hero-pangrama {
+        font-size: clamp(36px, 10vw, 42px);
+    }
+
+    .grafica {
+        object-position: center top;
+    }
+
+}
+
+
+/* ==================================
+   PANTALLAS MUY PEQUEÑAS
+================================== */
+
+@media (max-width: 360px) {
+
+    header .logo {
+        width: 185px;
+    }
+
+    .hero {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .hero-pangrama {
+        font-size: 36px;
+    }
+
+}
